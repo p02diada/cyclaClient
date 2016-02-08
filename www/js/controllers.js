@@ -43,9 +43,25 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope, $http) {
 
-  $http.get('http://localhost:8000/usuarios/1/')
-  .success(function(data){
-    $scope.nombre=data.username;
+  //$http.get('http://localhost:8000/usuarios/1/')
+ // .success(function(data){
+   // $scope.nombre=data.username;
+
+      var u = {
+        "username": "cilista15",
+        "password": "alberto8",
+    }
+    $http.post('http://localhost:8000/usuarios/registrarCiclista/', u)   
+    .success(function(data) {
+      console.log("HA ENVIADO EL POST");
+      window.location = "#/app/login";
+    })
+    .error(function(data){
+      // An alert dialog
+
+      console.log("ERRORRRRRR");
+    })    
+  
 
       $scope.playlists = [
     { title: 'Reggae', id: 1 },
@@ -57,7 +73,7 @@ angular.module('starter.controllers', [])
   ];
 
 
-  })
+//  })
 
 
 })
