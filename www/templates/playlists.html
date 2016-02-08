@@ -1,10 +1,31 @@
 <ion-view view-title="Playlists">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-      	{{playlist.title}}
-      </ion-item>
-    </ion-list>
-    {{nombre}}
+
+
+	<div class="list">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Usuario</span>
+    <input type="text" placeholder="Usuario" ng-model="user.username">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Contraseña</span>
+    <input type="password" placeholder="Contraseña" ng-model="user.password">
+  </label>
+</div>
+	<div class="row">
+		<div class="col s6">
+			<button class="btn waves-effect btn-flat" type="submit" name="registrar" ng-click="registrarUsuario(user)">Registrarse
+
+    		</button>
+		</div>
+
+		<div class="col s6">
+			<button class="btn waves-effect green" type="submit" name="action">Entrar
+
+				<i class="mdi-action-input"></i>
+    		</button>
+		</div>
+	</div>
+
   </ion-content>
 </ion-view>
