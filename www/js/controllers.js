@@ -66,12 +66,91 @@ angular.module('starter.controllers', [])
 
   }
 
+})
 
-  
-  
+.controller('InicioCtrl', function($scope, $http) {
 
+
+  $scope.registrarUsuario=function(user){
+
+    var u = {
+        "username": user.username,
+        "password": user.password,
+
+    }
+
+        $http.post('http://127.0.0.1:8000/usuarios/registrarCiclista/', u)   
+    .success(function(data) {
+      console.log("HA ENVIADO EL POST");
+      window.location = "#/app/login";
+    })
+    .error(function(err){
+      // An alert dialog
+
+      console.log(err);
+    })  
+
+
+  }
 
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('seleccionUsuarioCtrl', function($scope, $http) {
+
+})
+
+.controller('RegistrarRemitenteCtrl', function($scope, $http) {
+
+
+  $scope.registrarUsuario=function(user){
+
+    var u = {
+        "username": user.username,
+        "password": user.password,
+
+    }
+
+        $http.post('http://127.0.0.1:8000/usuarios/registrarRemitente/', u)   
+    .success(function(data) {
+      console.log("HA ENVIADO EL POST");
+      window.location = "#/app/login";
+    })
+    .error(function(err){
+      // An alert dialog
+
+      console.log(err);
+    })  
+
+
+  }
+
+})
+
+.controller('RegistrarCiclistaCtrl', function($scope, $http) {
+
+
+  $scope.registrarUsuario=function(user){
+
+    var u = {
+        "username": user.username,
+        "password": user.password,
+
+    }
+
+        $http.post('http://127.0.0.1:8000/usuarios/registrarCiclista/', u)   
+    .success(function(data) {
+      console.log("HA ENVIADO EL POST");
+      window.location = "#/app/login";
+    })
+    .error(function(err){
+      // An alert dialog
+
+      console.log(err);
+    })  
+
+
+  }
+
+})
+
+
