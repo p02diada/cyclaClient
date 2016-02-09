@@ -93,9 +93,34 @@ angular.module('starter.controllers', [])
 
   }
 
+  $scope.loguear=function(user){
+
+    var u = {
+        "username": user.username,
+        "password": user.password,
+
+    }
+
+    $http.post('http://127.0.0.1:8000/api-token-auth/', 'username=' + user.username + '&password=' + user.password, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+
+    })
+    .success(function(data){
+      console.log("HA ENTRADO");
+    })
+    .error(function(err){
+      console.log(err);
+    })
+
+  }
+
 })
 
 .controller('seleccionUsuarioCtrl', function($scope, $http) {
+
+
 
 })
 
